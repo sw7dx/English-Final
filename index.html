@@ -116,16 +116,9 @@
   .share-box .sh-title{font-size:17px;font-weight:700;color:var(--purple-main);display:block;margin-bottom:8px;}
   .share-box p{font-size:15px;color:var(--text-sub);line-height:1.8;}
 
-  /* COMMENTS */
+  /* COMMENTS CONTAINER */
   .comments-section{margin:0 16px 24px;background:var(--surface);border:1px solid var(--purple-pale);border-radius:var(--radius);padding:22px 20px;font-family:'Tajawal',sans-serif;direction:rtl;}
   .comments-title{font-size:16px;font-weight:700;color:var(--purple-main);margin-bottom:14px;}
-  .comment-input{width:100%;padding:12px 15px;border-radius:var(--radius-sm);border:1.5px solid var(--purple-pale);background:var(--surface-2);font-family:'Tajawal',sans-serif;font-size:14px;color:var(--text-main);resize:vertical;min-height:80px;outline:none;transition:border-color 0.2s;display:block;margin-bottom:10px;direction:rtl;}
-  .comment-input:focus{border-color:var(--purple-soft);}
-  .comment-submit{padding:10px 26px;border-radius:var(--radius-sm);border:none;background:var(--purple-main);color:#fff;font-family:'Tajawal',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background 0.18s;}
-  .comment-submit:hover{background:var(--purple-deep);}
-  .comments-list{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
-  .comment-item{background:var(--purple-bg);border:1px solid var(--purple-pale);border-radius:var(--radius-sm);padding:12px 14px;font-size:14px;line-height:1.6;}
-  .comment-time{font-size:11px;color:var(--text-muted);margin-top:4px;}
 
   /* FOOTER */
   .footer{border-top:1px solid var(--purple-pale);margin-top:8px;padding:28px 16px 40px;text-align:center;}
@@ -139,7 +132,6 @@
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-label">Mega Goal 3 — 2nd Term — Grade 11</div>
   <h1>Interactive Final Exam Review<br><span style="font-size:0.75em;opacity:0.9">Vocabulary & Grammar</span></h1>
@@ -151,13 +143,11 @@
   </div>
 </div>
 
-<!-- TABS -->
 <div class="tab-bar">
   <button class="tab-btn active" id="tab-voc"  onclick="switchTab('voc')">📚 Vocabulary (78 Q)</button>
   <button class="tab-btn"        id="tab-gram" onclick="switchTab('gram')">✏️ Grammar (72 Q)</button>
 </div>
 
-<!-- SCORE -->
 <div class="score-panel">
   <div class="sc-item"><div class="sc-num"     id="sc-ans">0</div><div class="sc-label">Answered</div></div>
   <div class="sc-item"><div class="sc-num ok"  id="sc-cor">0</div><div class="sc-label">Correct</div></div>
@@ -165,27 +155,21 @@
   <div class="sc-item"><div class="sc-num"     id="sc-pct" style="color:var(--purple-main)">—</div><div class="sc-label">Score</div></div>
 </div>
 
-<!-- PROGRESS -->
 <div class="progress-wrap">
   <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
   <div class="progress-txt" id="prog-txt">0 of 0 questions answered</div>
 </div>
 
-<!-- HOT NOTICE -->
 <div class="hot-notice">
   🔥 <strong>High-Frequency Questions</strong> marked with ⭐ — these appeared in multiple past exam models and are very likely to appear in your test.
 </div>
 
-<!-- PAGE INFO -->
 <div class="page-info" id="page-info"></div>
 
-<!-- QUIZ -->
 <div id="quiz"></div>
 
-<!-- PAGINATION BOTTOM -->
 <div class="pagination" id="pag-bottom"></div>
 
-<!-- RESULTS PANEL -->
 <div class="results-panel" id="results-panel">
   <div class="results-score-big" id="res-pct">—</div>
   <div class="results-label">Your Final Score 🎉</div>
@@ -197,21 +181,32 @@
   <button class="btn-reset" onclick="resetSection()">↺ Restart This Section</button>
 </div>
 
-<!-- SHARE BOX -->
 <div class="share-box">
   <span class="sh-title">الدالّ على الخير كفاعله 🤍</span>
   <p>إذا شفت إنها مفيدة شاركها مع أصحابك، يمكن تكون سبب في نجاحك بإذن الله ✨</p>
 </div>
 
-<!-- COMMENTS -->
 <div class="comments-section">
-  <div class="comments-title">دعوة جملية منك 🤍</div>
-  <textarea class="comment-input" id="comment-text" placeholder="اكتب لي رايك في الاختبار..."></textarea>
-  <button class="comment-submit" onclick="submitComment()">إرسال التعليق</button>
-  <div class="comments-list" id="comments-list"></div>
+  <div class="comments-title">التعليقات والمناقشات 🤍</div>
+  
+  <script src="https://giscus.app/client.js"
+        data-repo="sw7dx/English-Final"
+        data-repo-id="R_kgDOS8zHAA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOS8zHAM4C_TU4"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="ar"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+  </script>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-credit">Prepared & Designed by <a href="https://www.instagram.com/sw7dx" target="_blank" rel="noopener">@sw7dx</a></div>
@@ -382,7 +377,6 @@ const GRAM = [
 let currentTab = 'voc';
 let answered   = { voc:{}, gram:{} };
 let currentPage = { voc:0, gram:0 };
-let comments = [];
 
 function currentData() { return currentTab === 'voc' ? VOC : GRAM; }
 
@@ -532,42 +526,9 @@ function resetSection() {
   renderPage();
 }
 
-function submitComment() {
-  const text = document.getElementById('comment-text').value.trim();
-  if (!text) return;
-  const now = new Date();
-  const t = now.toLocaleDateString('ar-SA') + ' — ' + now.toLocaleTimeString('ar-SA',{hour:'2-digit',minute:'2-digit'});
-  comments.unshift({text, time:t});
-  document.getElementById('comment-text').value = '';
-  renderComments();
-}
-
-function renderComments() {
-  const list = document.getElementById('comments-list');
-  list.innerHTML = comments.map(c=>`<div class="comment-item">${c.text}<div class="comment-time">${c.time}</div></div>`).join('');
-}
-
 renderPage();
 </script>
 
-
-<script src="https://giscus.app/client.js"
-        data-repo="sw7dx/English-Final"
-        data-repo-id="R_kgDOS8zHAA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOS8zHAM4C_TU4"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="ar"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
-  
 <script data-goatcounter="https://h3i2bownw.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>
