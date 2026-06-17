@@ -116,9 +116,13 @@
   .share-box .sh-title{font-size:17px;font-weight:700;color:var(--purple-main);display:block;margin-bottom:8px;}
   .share-box p{font-size:15px;color:var(--text-sub);line-height:1.8;}
 
-  /* COMMENTS */
-  .comments-section{margin:0 16px 24px;background:var(--surface);border:1px solid var(--purple-pale);border-radius:var(--radius);padding:22px 20px;font-family:'Tajawal',sans-serif;direction:rtl;}
-  .comments-title{font-size:16px;font-weight:700;color:var(--purple-main);margin-bottom:18px;}
+  /* NEW CUSDIS WRAPPER */
+  .cusdis-wrapper{margin:0 16px 24px;background:var(--surface);border:1px solid var(--purple-pale);border-radius:var(--radius);padding:22px 20px;font-family:'Tajawal',sans-serif;}
+  .cusdis-title{font-size:16px;font-weight:700;color:var(--purple-main);margin-bottom:14px;text-align:center;direction:rtl;}
+
+  /* CUSDIS TEXT OVERRIDES */
+  label[for="nickname"] { visibility: hidden; position: relative; }
+  label[for="nickname"]::after { content: "Your Name"; visibility: visible; position: absolute; left: 0; }
 
   /* FOOTER */
   .footer{border-top:1px solid var(--purple-pale);margin-top:8px;padding:28px 16px 40px;text-align:center;}
@@ -196,9 +200,9 @@
   <p>إذا شفت إنها مفيدة شاركها مع أصحابك، يمكن تكون سبب في نجاحك بإذن الله ✨</p>
 </div>
 
-<!-- COMMENTS -->
-<div class="comments-section">
-  <div class="comments-title">دعوة جميلة منك 🤍</div>
+<!-- COMMENTS (Cusdis) -->
+<div class="cusdis-wrapper">
+  <div class="cusdis-title">دعوة جميلة منك 🤍</div>
   <div id="cusdis_thread"
     data-host="https://cusdis.com"
     data-app-id="234cf5b9-7723-4bf8-90fb-2ef327cc273e"
