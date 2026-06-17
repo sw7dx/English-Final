@@ -116,9 +116,9 @@
   .share-box .sh-title{font-size:17px;font-weight:700;color:var(--purple-main);display:block;margin-bottom:8px;}
   .share-box p{font-size:15px;color:var(--text-sub);line-height:1.8;}
 
-  /* COMMENTS CONTAINER */
+  /* COMMENTS */
   .comments-section{margin:0 16px 24px;background:var(--surface);border:1px solid var(--purple-pale);border-radius:var(--radius);padding:22px 20px;font-family:'Tajawal',sans-serif;direction:rtl;}
-  .comments-title{font-size:16px;font-weight:700;color:var(--purple-main);margin-bottom:14px;}
+  .comments-title{font-size:16px;font-weight:700;color:var(--purple-main);margin-bottom:18px;}
 
   /* FOOTER */
   .footer{border-top:1px solid var(--purple-pale);margin-top:8px;padding:28px 16px 40px;text-align:center;}
@@ -132,6 +132,7 @@
 </head>
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-label">Mega Goal 3 — 2nd Term — Grade 11</div>
   <h1>Interactive Final Exam Review<br><span style="font-size:0.75em;opacity:0.9">Vocabulary & Grammar</span></h1>
@@ -143,11 +144,13 @@
   </div>
 </div>
 
+<!-- TABS -->
 <div class="tab-bar">
   <button class="tab-btn active" id="tab-voc"  onclick="switchTab('voc')">📚 Vocabulary (78 Q)</button>
   <button class="tab-btn"        id="tab-gram" onclick="switchTab('gram')">✏️ Grammar (72 Q)</button>
 </div>
 
+<!-- SCORE -->
 <div class="score-panel">
   <div class="sc-item"><div class="sc-num"     id="sc-ans">0</div><div class="sc-label">Answered</div></div>
   <div class="sc-item"><div class="sc-num ok"  id="sc-cor">0</div><div class="sc-label">Correct</div></div>
@@ -155,21 +158,27 @@
   <div class="sc-item"><div class="sc-num"     id="sc-pct" style="color:var(--purple-main)">—</div><div class="sc-label">Score</div></div>
 </div>
 
+<!-- PROGRESS -->
 <div class="progress-wrap">
   <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
   <div class="progress-txt" id="prog-txt">0 of 0 questions answered</div>
 </div>
 
+<!-- HOT NOTICE -->
 <div class="hot-notice">
   🔥 <strong>High-Frequency Questions</strong> marked with ⭐ — these appeared in multiple past exam models and are very likely to appear in your test.
 </div>
 
+<!-- PAGE INFO -->
 <div class="page-info" id="page-info"></div>
 
+<!-- QUIZ -->
 <div id="quiz"></div>
 
+<!-- PAGINATION BOTTOM -->
 <div class="pagination" id="pag-bottom"></div>
 
+<!-- RESULTS PANEL -->
 <div class="results-panel" id="results-panel">
   <div class="results-score-big" id="res-pct">—</div>
   <div class="results-label">Your Final Score 🎉</div>
@@ -181,32 +190,26 @@
   <button class="btn-reset" onclick="resetSection()">↺ Restart This Section</button>
 </div>
 
+<!-- SHARE BOX -->
 <div class="share-box">
   <span class="sh-title">الدالّ على الخير كفاعله 🤍</span>
   <p>إذا شفت إنها مفيدة شاركها مع أصحابك، يمكن تكون سبب في نجاحك بإذن الله ✨</p>
 </div>
 
+<!-- COMMENTS -->
 <div class="comments-section">
-  <div class="comments-title">التعليقات والمناقشات 🤍</div>
-  
-  <script src="https://giscus.app/client.js"
-        data-repo="sw7dx/English-Final"
-        data-repo-id="R_kgDOS8zHAA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOS8zHAM4C_TU4"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="ar"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-  </script>
+  <div class="comments-title">دعوة جميلة منك 🤍</div>
+  <div id="cusdis_thread"
+    data-host="https://cusdis.com"
+    data-app-id="234cf5b9-7723-4bf8-90fb-2ef327cc273e"
+    data-page-id="mega_goal_3_final_review"
+    data-page-url=""
+    data-page-title="Mega Goal 3 — Final Exam Review"
+  ></div>
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-credit">Prepared & Designed by <a href="https://www.instagram.com/sw7dx" target="_blank" rel="noopener">@sw7dx</a></div>
